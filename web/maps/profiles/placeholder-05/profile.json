@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "placeholder-05",
+  "status": "placeholder",
+  "displayName": "Unidentified map placeholder 05",
+  "ownerLabel": null,
+  "mapIdentity": null,
+  "launchable": false,
+  "resourceManifest": "resources.json",
+  "missionManifest": null
+}

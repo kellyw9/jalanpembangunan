@@ -1,0 +1,13 @@
+{
+    "sampled_valid_pixels": 954621,
+    "estimated_min_elevation": -2665.07568359375,
+    "estimated_max_elevation": -1640.5452880859375,
+    "estimated_mean_elevation": -2419.7373046875,
+    "estimated_percentiles": {
+        "p05": -2633.281982421875,
+        "p25": -2572.079345703125,
+        "p50": -2489.512451171875,
+        "p75": -2355.96044921875,
+        "p95": -1947.56298828125
+    }
+}

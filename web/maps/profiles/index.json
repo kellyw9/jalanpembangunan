@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "profiles": [
+    {
+      "id": "teammate",
+      "profilePath": "teammate/profile.json",
+      "resourceManifestPath": "teammate/resources.json"
+    },
+    {
+      "id": "kelly",
+      "profilePath": "kelly/profile.json",
+      "resourceManifestPath": "kelly/resources.json"
+    },
+    {
+      "id": "placeholder-03",
+      "profilePath": "placeholder-03/profile.json",
+      "resourceManifestPath": "placeholder-03/resources.json"
+    },
+    {
+      "id": "placeholder-04",
+      "profilePath": "placeholder-04/profile.json",
+      "resourceManifestPath": "placeholder-04/resources.json"
+    },
+    {
+      "id": "placeholder-05",
+      "profilePath": "placeholder-05/profile.json",
+      "resourceManifestPath": "placeholder-05/resources.json"
+    }
+  ]
+}

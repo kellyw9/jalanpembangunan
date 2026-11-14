@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "teammate",
+  "status": "pending-verification",
+  "displayName": "Teammate map (identity and ownership pending verification)",
+  "ownerLabel": "teammate",
+  "mapIdentity": null,
+  "launchable": false,
+  "resourceManifest": "resources.json",
+  "missionManifest": null
+}

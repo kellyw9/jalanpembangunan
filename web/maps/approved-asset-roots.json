@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "roots": [
+    {
+      "id": "web-data",
+      "path": "web/data",
+      "access": "read-only"
+    },
+    {
+      "id": "resource-data",
+      "path": "resource-data",
+      "access": "read-only"
+    }
+  ]
+}

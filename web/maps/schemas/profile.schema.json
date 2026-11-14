@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "profile.schema.json",
+  "title": "Mars map profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "status",
+    "displayName",
+    "ownerLabel",
+    "mapIdentity",
+    "launchable",
+    "resourceManifest",
+    "missionManifest"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "status": {
+      "enum": ["pending-verification", "placeholder", "verified"]
+    },
+    "displayName": { "type": "string", "minLength": 1 },
+    "ownerLabel": { "type": ["string", "null"] },
+    "mapIdentity": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "provenance"],
+          "properties": {
+            "name": { "type": "string", "minLength": 1 },
+            "provenance": { "type": "string", "minLength": 1 }
+          }
+        }
+      ]
+    },
+    "launchable": { "type": "boolean" },
+    "resourceManifest": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*:)(?!.*\\\\)(?!.*(?:^|/)(?:\\.|%2[eE])(?:\\.|%2[eE])?(?:/|$))(?!.*%(?:2[fF]|5[cC]|25)).+$"
+    },
+    "missionManifest": {
+      "type": ["string", "null"],
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*:)(?!.*\\\\)(?!.*(?:^|/)(?:\\.|%2[eE])(?:\\.|%2[eE])?(?:/|$))(?!.*%(?:2[fF]|5[cC]|25)).+$"
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "enum": ["pending-verification", "placeholder"] } } },
+      "then": { "properties": { "launchable": { "const": false }, "mapIdentity": { "type": "null" } } }
+    },
+    {
+      "if": { "properties": { "status": { "const": "verified" } } },
+      "then": { "properties": { "mapIdentity": { "type": "object" } } }
+    }
+  ]
+}
